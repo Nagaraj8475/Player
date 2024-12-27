@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theater with Light Control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="theater" id="theater">
+      <div class="overlay" id="overlay"></div>
+      <div class="video-screen" id="video-screen">
+        <video id="theater-video" controls>
+          <source src="video.mp4" type="video/mp4" />
+          <source src="video.webm" type="video/webm" />
+          <source src="video.ogv" type="video/ogg" />
+          <source src="video.mkv" type="video/x-matroska" />
+          <p>
+            Your browser does not support the video tag or the video format.
+          </p>
+        </video>
+        <canvas id="video-canvas" style="display: none"></canvas>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="light-on">Light On</button>
+      <button id="light-off">Light Off</button>
+      <button id="import-button">Import Video</button>
+      <input type="file" id="video-upload" accept="video/*" />
+      <button id="fullscreen-button">Fullscreen</button>
+    </div>
+
+    <svg width="0" height="0">
+      <defs>
+        <clipPath id="curved-clip" clipPathUnits="objectBoundingBox">
+          <path
+            d="
+            M 0,0 
+            Q 0.5,0.08 1,0 
+            V 1 
+            Q 0.5,0.95 0,1 
+            Z
+          "
+          />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <script src="script.js"></script>
+  </body>
+</html>
