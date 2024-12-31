@@ -108,3 +108,4 @@ function analyzeVideoBrightness() {
   // Continue analyzing frames
   requestAnimationFrame(analyzeVideoBrightness);
 }
+
